@@ -8,7 +8,7 @@ The goal is to explore vaccination rates and influenza vaccine doses administere
 
 ## Dataset
 
-Source: [Link to original dataset]
+Source: [\[Link to original dataset\]](https://data.delaware.gov/Health/Delaware-Influenza-Vaccinations/db7v-avfm/about_data)
 
 The dataset contains information about:
 
