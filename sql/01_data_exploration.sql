@@ -3,11 +3,38 @@ SELECT *
 FROM flu_data
 LIMIT 10;
 
+-- Count the total number of records in the dataset 
+-- Total records is 36,562
+SELECT COUNT(*)
+FROM flu_data;
 
--- Find the different indicators
+-- The dataset contains 36,562 records covering July 2019 through November 2025.
+SELECT
+    MIN(start_date) AS earliest_date,
+    MAX(end_date) AS latest_date
+FROM flu_data;
+
+-- There are 16 unique indicators in the dataset
+-- Flu Vaccine Doses Administered
+-- Percentage Vaccinated
+-- Age-specific versions of both
 SELECT DISTINCT indicator
 FROM flu_data;
 
+-- There are 4 unique counties in the dataset
+-- Kent County, New Castle County, Sussex County, and Null (for records that do not have a county associated with them)
+SELECT DISTINCT county
+FROM flu_data;
+
+-- There are 2 unique units in the dataset
+-- Percent and People
+SELECT DISTINCT unit
+FROM flu_data;
+
+-- There are 347 unique locations in the dataset
+-- Locations are a combination of county, zip code, and Census tract. Some records do not have a location associated with them, so they are null.
+SELECT DISTINCT location
+FROM flu_data;
 
 -- Count how many records exist for each indicator.
 -- This helps us understand the structure of the dataset
