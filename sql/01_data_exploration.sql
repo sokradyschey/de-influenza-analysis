@@ -1,3 +1,16 @@
+-- Create a table to store the flu data
+CREATE TABLE flu_data (
+	location VARCHAR(255),
+	county VARCHAR(255),
+	indicator VARCHAR(255),
+	value NUMERIC,
+	start_date TIMESTAMP,
+	end_date TIMESTAMP,
+	date_used TIMESTAMP,
+	unit VARCHAR(255),
+	age_adjusted BOOLEAN
+);
+
 -- View a sample of the data
 SELECT *
 FROM flu_data
@@ -44,3 +57,58 @@ SELECT
     COUNT(*)
 FROM flu_data
 GROUP BY indicator;
+
+-- Checking the dataset for duplicate records. There are duplicate records in the dataset, which may need to be addressed before analysis.
+SELECT
+    location,
+    indicator,
+    start_date,
+    end_date,
+    COUNT(*) AS record_count
+FROM flu_data
+GROUP BY
+    location,
+    indicator,
+    start_date,
+    end_date
+HAVING COUNT(*) > 1;
+
+-- Reviewing the entire dataset to identify duplicate records.
+SELECT
+    location,
+    indicator,
+    start_date,
+    end_date,
+    value,
+    unit,
+    COUNT(*) AS record_count
+FROM flu_data
+GROUP BY
+    location,
+    indicator,
+    start_date,
+    end_date,
+    value,
+    unit
+HAVING COUNT(*) > 1;
+
+-- Count the number of duplicate records
+SELECT COUNT(*)
+FROM (
+    SELECT
+        location,
+        indicator,
+        start_date,
+        end_date,
+        value,
+        unit
+    FROM flu_data
+    GROUP BY
+        location,
+        indicator,
+        start_date,
+        end_date,
+        value,
+        unit
+    HAVING COUNT(*) > 1
+) duplicates;
