@@ -2,9 +2,28 @@
 
 ## Overview
 
-This project explores publicly available Delaware influenza vaccination data using PostgreSQL and SQL.
+This project analyzes publicly available Delaware influenza vaccination data using PostgreSQL and SQL.
 
-The goal is to understand vaccination patterns across geographic locations and age groups and to develop foundational data analysis skills using a real-world dataset.
+The goal is to explore vaccination rates and influenza vaccine doses administered across Delaware counties and age groups over time.
+
+## Dataset
+
+Source: [\[Link to original dataset\]](https://data.delaware.gov/Health/Delaware-Influenza-Vaccinations/db7v-avfm/about_data)
+
+The dataset contains information about:
+
+- Location
+- County
+- Indicator
+- Value
+- Date
+- Unit
+
+Indicators include:
+
+- Flu Vaccine Doses Administered
+- Percentage Vaccinated
+- Age-specific vaccination measures
 
 ## Tools
 
@@ -12,57 +31,15 @@ The goal is to understand vaccination patterns across geographic locations and a
 - pgAdmin
 - SQL
 
-## Dataset
+## Questions
 
-The dataset contains influenza vaccination measurements across Delaware locations and counties.
+This project will explore questions such as:
 
-The data includes:
+1. How does vaccination percentage vary across age groups?
+2. How has vaccination changed over time?
+3. Which age groups have the highest vaccination percentages?
+4. How do vaccination measures differ across Delaware counties?
 
-- Geographic location
-- County
-- Indicator
-- Measurement value
-- Measurement period
-- Unit
-- Age-adjustment status
+## Analysis
 
-## Current Project Status
-
-### Data Exploration
-
-Completed initial exploration of the dataset, including:
-
-- Identified available indicators
-- Identified geographic dimensions
-- Identified measurement units
-- Determined the available date range
-- Reviewed missing values
-- Investigated potential duplicate records
-- Reviewed the structure and data types of each column
-
-### Initial Findings
-
-The dataset contains two primary types of measurements:
-
-- Flu Vaccine Doses Administered
-- Percentage Vaccinated
-
-Both measurements are available for different age groups.
-
-The `date_used` field contains `N/A` values and does not appear to be useful for determining the measurement period. `start_date` and `end_date` are used instead.
-
-Potential duplicate records were identified during data-quality exploration and are currently being investigated.
-
-## Project Questions
-
-The analysis will eventually explore questions such as:
-
-1. How has vaccination percentage changed over time?
-2. How does vaccination percentage differ across age groups?
-3. How does vaccination vary across Delaware counties?
-4. How many vaccine doses were administered over time?
-5. Are there meaningful differences in vaccination patterns across locations?
-
-## Project Status
-
-Currently in the data exploration and data-quality phase.
+Analysis will be added as the project develops.
